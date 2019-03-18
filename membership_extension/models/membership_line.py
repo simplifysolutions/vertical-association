@@ -34,7 +34,7 @@ class MembershipLine(models.Model):
             self.date_from = self.date
             next_date = self.membership_id._get_next_date(date)
             if next_date:
-                date_to = fields.Date.to_string(next_date - timedelta(1))
+                date_to = next_date - timedelta(1)
                 if date_to >= self.date:
                     self.date_to = date_to
 
